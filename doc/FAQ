@@ -1,0 +1,36 @@
+eZCurlGateway extension v1.0.0 FAQ
+
+1. eZCurlGateway is not activated in eZ publish
+=================================================
+
+You will need to check if the extension is properly activated in site.ini.
+Edit `settings/override/site.ini.append' or `settings/override/site.ini.append.php'
+and find the `ExtensionSettings' group. Under it you should have an entry
+that says:
+
+ActiveExtensions[]=ezcurlgateway
+
+Make sure there are no spaces before or after the name.
+
+You should also consider checking the debug output 
+of eZ publish to see what is going wrong.
+
+
+2. eZCurlGateway requires a form element called "validate"
+=================================================
+
+In order for eZCurlGateway to automatically call the 
+validateForm function, you must name one of your 
+form elements (such as the submit button) "validate".
+
+3. eZCurlGateway class and the $useForm class variable
+=================================================
+
+In the begining of the eZCurlGateway class there is a variable
+called $useForm. Override $useForm as false if you do not need 
+to gather additional user information before you send the curl 
+information (although I can't think of many situations in which 
+this would happen, let me know if you actually use it, otherwise 
+I might just take it out.
+
+Example:    var $useForm = true;

@@ -1,0 +1,88 @@
+eZCurlGateway extension v1.0.0 README
+
+What is the eZCurlGateway extension?
+================================
+
+eZCurlGateway is a child class of eZPaymentGateway. It is an abstract class for
+implementing transparent credit card payment in eZ publish using cURL.
+
+
+eZCurlGateway version
+=======================
+
+The current version of eZCurlGateway is 1.0.0.
+Last Updated: Novemeber 30, 2005
+
+You can find details about changes for this 
+version in doc/changelogs/CHANGELOG-1.0.0
+
+
+License
+=======
+
+This software is licensed under the GNU General Public License. 
+The complete license agreement is included in the doc/LICENSE file. 
+For more information or questions please contact license@brookinsconsulting.com
+
+
+Requirements
+============
+
+The following requirements exists for using eZCurlGateway extension:
+
+o  eZ publish version:
+
+   Make sure you use eZ publish version 3.5 or higher.
+
+o  PHP version:
+
+   Make sure you have PHP 4.3.2 or higher.
+
+o  eZ publish must be reachable from the internet:
+
+   Make sure you have installed eZ publish on a webserver 
+   that is reachable by the Authorize.Net service.
+
+
+Installation
+============
+Simply copy the ezcurlgateway/ folder into the extension/ folder.
+
+
+Usage
+============
+
+Simply include the extension's class (below) in your custom gateway file.
+
+include_once('extension/ezcurlgateway/classes/ezcurlgateway.php');
+
+It's easiest to learn how to write a new curl gateway 
+using this class by examining and modifying an existing class. 
+
+We recommend the Authorize.Net implementation, downloadable at 
+http://pubsvn.ez.no/community/trunk/extension/ezauthorize
+
+
+Notes
+===============
+* For eZCurlGateway to automatically call the validateForm function, 
+you must name one of your form elements (such as the submit button) 
+"validate".
+
+
+Troubleshooting
+===============
+
+1. Read the FAQ
+   ------------
+
+   Some problems are more common than others. The most common ones are listed
+   in the the FAQ.
+
+2. Support
+   -------
+
+   If you have find any problems not handled by this document or the FAQ you
+   can contact Brookins Consulting trough the support system:
+   http://brookinsconsulting.com/contact
+
